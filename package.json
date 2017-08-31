@@ -1,0 +1,51 @@
+{
+  "name": "react-date-range",
+  "version": "1.0.0",
+  "description": "react date range",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp sass && ./node_modules/.bin/rimraf lib && ./node_modules/.bin/babel src --copy-files --source-maps --extensions .es6,.es,.jsx --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ash-sc/react-date-range.git"
+  },
+  "keywords": [
+    "react",
+    "date",
+    "range"
+  ],
+  "author": "Ash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ash-sc/react-date-range/issues"
+  },
+  "homepage": "https://github.com/Ash-sc/react-date-range#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^2.1.1",
+    "jsx-loader": "^0.13.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "node-sass": "^4.5.3",
+    "react": "^15.6.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "webpack": "^1.15.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
