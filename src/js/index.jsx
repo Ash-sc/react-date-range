@@ -5,6 +5,8 @@ import min from 'lodash/min';
 import max from 'lodash/max';
 import CalendarSelect from './calendarSelect';
 
+import '../assets/style/main.css';
+
 export default class DatePicker extends React.Component {
 
   constructor(props) {
