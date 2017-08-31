@@ -1,2 +1,2 @@
-module.exports = require('./lib/index');
-exports.default = require('./lib/index');
+module.exports = require('./lib/js/index');
+exports.default = require('./lib/js/index');

@@ -13,11 +13,11 @@ export default class CommonFn {
   }
 
   static ym(date) {
-    return moment(date).format('YYYY-MM');
+    return moment(date || undefined).format('YYYY-MM');
   }
 
   static ymd(date) {
-    return moment(date).format('YYYY-MM-DD');
+    return moment(date || undefined).format('YYYY-MM-DD');
   }
 
 }
