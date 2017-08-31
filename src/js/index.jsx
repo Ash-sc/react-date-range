@@ -7,7 +7,7 @@ import CalendarSelect from './calendarSelect';
 
 import '../assets/style/main.css';
 
-export default class DatePicker extends React.Component {
+export default class DateRange extends React.Component {
 
   constructor(props) {
     super(props);
@@ -149,7 +149,7 @@ export default class DatePicker extends React.Component {
     } = this.state;
 
     return (
-      <div className="date-picker-body">
+      <div className="date-range-body">
         <div
           className="input-section"
           onClick={() => this.dateSectionDisplay('show')}

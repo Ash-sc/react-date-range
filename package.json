@@ -2,7 +2,7 @@
   "name": "react-date-range",
   "version": "1.0.0",
   "description": "react date range",
-  "main": "dist/main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp sass && ./node_modules/.bin/rimraf lib && ./node_modules/.bin/babel src --copy-files --source-maps --extensions .es6,.es,.jsx --out-dir lib"
@@ -39,6 +39,7 @@
     "moment": "^2.18.1",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.2",
     "url-loader": "^0.5.8",
