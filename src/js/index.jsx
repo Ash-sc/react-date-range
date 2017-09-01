@@ -14,8 +14,8 @@ export default class DateRange extends React.Component {
 
     this.state = {
       format: props.format || 'x', // 日期格式
-      minDate: CommonFn.ymd(props.minDate || '2016-01-02'),
-      maxDate: CommonFn.ymd(props.maxDate || '2100-01-01'),
+      minDate: CommonFn.ymd(props.minDate || '1900-01-01'),
+      maxDate: CommonFn.ymd(props.maxDate || '2200-01-01'),
       startMonth: CommonFn.ym(props.startDate), // 默认开始月份
       endMonth: props.endDate ? CommonFn.ym(props.endDate)
         : moment(props.startDate || undefined).add(1, 'months').format('YYYY-MM'), // 默认结束月份

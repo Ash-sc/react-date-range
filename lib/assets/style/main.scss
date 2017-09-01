@@ -6,8 +6,11 @@
   .input-section {
     display: inline-block;
     height: 36px;
-    border: 1px solid #505466;
     position: relative;
+    background-color: #2e3545;
+    color: #b4c0cb;
+    border: 1px solid #2a303c;
+    border-radius: 4px;
 
     .start-time, .end-time {
       height: calc(100% - 2px);
@@ -16,6 +19,11 @@
       background: none;
       outline: none;
       text-align: center;
+      color: #b4c0cb;
+    }
+
+    .start-time::placeholder, .end-time::placeholder {
+      color: #b4c0cb;
     }
 
     .clip-span {
@@ -140,7 +148,7 @@
         display: inline-block;
         width: 31px;
         height: 26px;
-        line-height: 30px;
+        line-height: 28px;
         text-align: center;
         cursor: pointer;
         border-radius: 6px;
@@ -150,19 +158,36 @@
         transition: background-color .2s ease;
       }
 
+      .current-day {
+        background-color: #868c93;
+        color: #000000;
+        position: relative;
+      }
+
       .date-item:not(.not-current-month):hover,
-      .date-item.start-or-end-selected {
+      .start-or-end-selected {
         background-color: #b4c0cb;
         color: #000000;
       }
 
-      .date-item.selected {
+      .selected {
         background-color: #4c576a;
         color: #b4c0cb;
       }
 
-      .date-item.not-current-month {
+      .not-current-month {
         visibility: hidden;
+      }
+
+      .current-day:after {
+        content: ' ';
+        position: absolute;
+        right: 2px;
+        bottom: 5px;
+        border-top: 4px solid #000;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transform: rotate(315deg);
       }
 
       .date-item.disable, .date-item.disable:hover {

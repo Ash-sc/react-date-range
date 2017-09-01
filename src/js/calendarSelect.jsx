@@ -1,5 +1,4 @@
 import React from 'react';
-// import moment from 'moment';
 import CommonFn from './commonFn';
 
 export default class CalendarSelect extends React.Component {
@@ -41,6 +40,7 @@ export default class CalendarSelect extends React.Component {
     const weekdays = lang === 'zh-cn' ?
       ['日', '一', '二', '三', '四', '五', '六']
       : ['Sun', 'Mon', 'Tus', 'Wes', 'Thu', 'Fri', 'Sat'];
+    const isCurrentMonth = calendarMonth === CommonFn.ym();
     return (
       <div className={className}>
         <div className="header-section">
@@ -82,7 +82,7 @@ export default class CalendarSelect extends React.Component {
           {CommonFn.calendarArray(calendarMonth).map((item, key) =>
             <div
               key={key}
-              className={`date-item ${isSelected(item)} ${item.indexOf(calendarMonth) !== 0 ? 'not-current-month' : ''}`}
+              className={`date-item ${isSelected(item)} ${item.indexOf(calendarMonth) !== 0 ? 'not-current-month' : ''} ${isCurrentMonth && CommonFn.ymd() === item ? 'current-day' : '' }`}
               onClick={() => this.selectTime(item)}
               onMouseEnter={e => this.mouseEnterTime(item, e)}
             >{item.split('-')[2]}</div>

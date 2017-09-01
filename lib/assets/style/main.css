@@ -8,15 +8,21 @@
   .date-range-body .input-section {
     display: inline-block;
     height: 36px;
-    border: 1px solid #505466;
-    position: relative; }
+    position: relative;
+    background-color: #2e3545;
+    color: #b4c0cb;
+    border: 1px solid #2a303c;
+    border-radius: 4px; }
     .date-range-body .input-section .start-time, .date-range-body .input-section .end-time {
       height: calc(100% - 2px);
       border: none;
       width: calc(50% - 22px);
       background: none;
       outline: none;
-      text-align: center; }
+      text-align: center;
+      color: #b4c0cb; }
+    .date-range-body .input-section .start-time::placeholder, .date-range-body .input-section .end-time::placeholder {
+      color: #b4c0cb; }
     .date-range-body .input-section .clip-span {
       width: 40px;
       height: 100%;
@@ -101,7 +107,7 @@
         display: inline-block;
         width: 31px;
         height: 26px;
-        line-height: 30px;
+        line-height: 28px;
         text-align: center;
         cursor: pointer;
         border-radius: 6px;
@@ -109,16 +115,29 @@
         padding: 3px 2px;
         background-clip: content-box;
         transition: background-color .2s ease; }
+      .date-range-body .date-section .date-start-section .current-day, .date-range-body .date-section .date-end-section .current-day {
+        background-color: #868c93;
+        color: #000000;
+        position: relative; }
       .date-range-body .date-section .date-start-section .date-item:not(.not-current-month):hover,
-      .date-range-body .date-section .date-start-section .date-item.start-or-end-selected, .date-range-body .date-section .date-end-section .date-item:not(.not-current-month):hover,
-      .date-range-body .date-section .date-end-section .date-item.start-or-end-selected {
+      .date-range-body .date-section .date-start-section .start-or-end-selected, .date-range-body .date-section .date-end-section .date-item:not(.not-current-month):hover,
+      .date-range-body .date-section .date-end-section .start-or-end-selected {
         background-color: #b4c0cb;
         color: #000000; }
-      .date-range-body .date-section .date-start-section .date-item.selected, .date-range-body .date-section .date-end-section .date-item.selected {
+      .date-range-body .date-section .date-start-section .selected, .date-range-body .date-section .date-end-section .selected {
         background-color: #4c576a;
         color: #b4c0cb; }
-      .date-range-body .date-section .date-start-section .date-item.not-current-month, .date-range-body .date-section .date-end-section .date-item.not-current-month {
+      .date-range-body .date-section .date-start-section .not-current-month, .date-range-body .date-section .date-end-section .not-current-month {
         visibility: hidden; }
+      .date-range-body .date-section .date-start-section .current-day:after, .date-range-body .date-section .date-end-section .current-day:after {
+        content: ' ';
+        position: absolute;
+        right: 2px;
+        bottom: 5px;
+        border-top: 4px solid #000;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transform: rotate(315deg); }
       .date-range-body .date-section .date-start-section .date-item.disable, .date-range-body .date-section .date-start-section .date-item.disable:hover, .date-range-body .date-section .date-end-section .date-item.disable, .date-range-body .date-section .date-end-section .date-item.disable:hover {
         cursor: not-allowed;
         background-color: inherit;

@@ -107,7 +107,7 @@
         display: inline-block;
         width: 31px;
         height: 26px;
-        line-height: 30px;
+        line-height: 28px;
         text-align: center;
         cursor: pointer;
         border-radius: 6px;
@@ -115,16 +115,29 @@
         padding: 3px 2px;
         background-clip: content-box;
         transition: background-color .2s ease; }
+      .date-range-body .date-section .date-start-section .current-day, .date-range-body .date-section .date-end-section .current-day {
+        background-color: #868c93;
+        color: #000000;
+        position: relative; }
       .date-range-body .date-section .date-start-section .date-item:not(.not-current-month):hover,
-      .date-range-body .date-section .date-start-section .date-item.start-or-end-selected, .date-range-body .date-section .date-end-section .date-item:not(.not-current-month):hover,
-      .date-range-body .date-section .date-end-section .date-item.start-or-end-selected {
+      .date-range-body .date-section .date-start-section .start-or-end-selected, .date-range-body .date-section .date-end-section .date-item:not(.not-current-month):hover,
+      .date-range-body .date-section .date-end-section .start-or-end-selected {
         background-color: #b4c0cb;
         color: #000000; }
-      .date-range-body .date-section .date-start-section .date-item.selected, .date-range-body .date-section .date-end-section .date-item.selected {
+      .date-range-body .date-section .date-start-section .selected, .date-range-body .date-section .date-end-section .selected {
         background-color: #4c576a;
         color: #b4c0cb; }
-      .date-range-body .date-section .date-start-section .date-item.not-current-month, .date-range-body .date-section .date-end-section .date-item.not-current-month {
+      .date-range-body .date-section .date-start-section .not-current-month, .date-range-body .date-section .date-end-section .not-current-month {
         visibility: hidden; }
+      .date-range-body .date-section .date-start-section .current-day:after, .date-range-body .date-section .date-end-section .current-day:after {
+        content: ' ';
+        position: absolute;
+        right: 2px;
+        bottom: 5px;
+        border-top: 4px solid #000;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transform: rotate(315deg); }
       .date-range-body .date-section .date-start-section .date-item.disable, .date-range-body .date-section .date-start-section .date-item.disable:hover, .date-range-body .date-section .date-end-section .date-item.disable, .date-range-body .date-section .date-end-section .date-item.disable:hover {
         cursor: not-allowed;
         background-color: inherit;
