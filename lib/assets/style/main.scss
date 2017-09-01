@@ -6,8 +6,11 @@
   .input-section {
     display: inline-block;
     height: 36px;
-    border: 1px solid #505466;
     position: relative;
+    background-color: #2e3545;
+    color: #b4c0cb;
+    border: 1px solid #2a303c;
+    border-radius: 4px;
 
     .start-time, .end-time {
       height: calc(100% - 2px);
@@ -16,6 +19,11 @@
       background: none;
       outline: none;
       text-align: center;
+      color: #b4c0cb;
+    }
+
+    .start-time::placeholder, .end-time::placeholder {
+      color: #b4c0cb;
     }
 
     .clip-span {

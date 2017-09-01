@@ -70,10 +70,12 @@ render() {
       * **Type:** `string`
       * **Example:** `"年-月-日"`
   * `lang` - language.
-        * **Optional**
-        * **Default** `"en"`
-        * **Type:** `string`
-        * **value:** `"en" or "zh-cn"`
+      * **Optional**
+      * **Default** `"en"`
+      * **Type:** `string`
+      * **value:** `"en" or "zh-cn"`
+        
+        
 
 
 ## PS:
