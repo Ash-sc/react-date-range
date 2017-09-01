@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import '../src/assets/style/main.scss';
 import DateRange from '../src/js/index';
+import '../src/assets/style/main.scss';
 import './index.html';
 
 render(

@@ -53,6 +53,7 @@
     border-radius: 4px;
     background-color: #2b313d;
     color: #b4c0cb;
+    z-index: 1024;
 
     &.date-section-show {
       display: inherit;
@@ -86,16 +87,22 @@
           cursor: pointer;
         }
 
+        .prev-year {
+          left: 10px;
+        }
+
         .prev-month {
-          left: 20px;
+          left: 30px;
+          font-size: 20px;
         }
 
         .next-month {
-          right: 20px;
+          right: 30px;
+          font-size: 20px;
         }
 
         .next-year {
-          right: 0;
+          right: 10px;
         }
 
         .year-selector, .month-selector {
@@ -166,6 +173,16 @@
 
     }
 
+  }
+
+  /* 背景遮罩层 */
+  .bg-for-close {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1023;
   }
 
 }

@@ -4,8 +4,7 @@ import CommonFn from './commonFn';
 import min from 'lodash/min';
 import max from 'lodash/max';
 import CalendarSelect from './calendarSelect';
-
-import '../assets/style/main.css';
+import 'font-awesome/css/font-awesome.css';
 
 export default class DateRange extends React.Component {
 
@@ -119,7 +118,6 @@ export default class DateRange extends React.Component {
   dateCallback() {
     const { changeStartDate, changeEndDate } = this.props;
     const { startDate, endDate, format } = this.state;
-    console.log(startDate, endDate);
     if (changeStartDate) {
       changeStartDate(moment(startDate).format(format));
     }
@@ -184,6 +182,9 @@ export default class DateRange extends React.Component {
             calendarChange={(type, unit) => this.calendarChange(type, unit, 'end')}
           />
         </div>
+        {showCalendar &&
+        <div className="bg-for-close" onClick={() => this.dateSectionDisplay('hide')} />
+        }
       </div>
     );
   }

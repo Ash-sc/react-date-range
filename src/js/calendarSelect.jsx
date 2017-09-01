@@ -41,10 +41,22 @@ export default class CalendarSelect extends React.Component {
     return (
       <div className={className}>
         <div className="header-section">
-          <span className="prev-year" onClick={() => calendarChange(-1, 'year')}>《</span>
-          <span className="prev-month" onClick={() => calendarChange(-1, 'month')}>&lt;</span>
-          <span className="next-month" onClick={() => calendarChange(1, 'month')}>&gt;</span>
-          <span className="next-year" onClick={() => calendarChange(1, 'year')}>》</span>
+          <span
+            className="prev-year fa fa-backward"
+            onClick={() => calendarChange(-1, 'year')}
+          />
+          <span
+            className="prev-month fa fa-caret-left"
+            onClick={() => calendarChange(-1, 'month')}
+          />
+          <span
+            className="next-month fa fa-caret-right"
+            onClick={() => calendarChange(1, 'month')}
+          />
+          <span
+            className="next-year fa fa-forward"
+            onClick={() => calendarChange(1, 'year')}
+          />
 
           <span className="year-selector">
             <span className="current">{calendarMonth.split('-')[0]}年</span>

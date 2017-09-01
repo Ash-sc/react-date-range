@@ -3,9 +3,9 @@
  */
 const path = require('path');
 const webpack = require('webpack');
-let WebpackDevServer = require('webpack-dev-server');
-
+const WebpackDevServer = require('webpack-dev-server');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const exec = require('child_process').exec;
 
 const config = {
   context: path.join(__dirname, '/example'),
@@ -24,9 +24,8 @@ const config = {
         loader: ExtractTextPlugin.extract(['css', 'sass']),
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]',
-        exclude: /node_modules/,
+        test: /\.(woff|woff2|eot|ttf|svg)(\?\S*)?$/,
+        loader: 'url?limit=100000&font/name=[name].[ext]',
       },
       {
         test: /\.ico$/,
@@ -56,7 +55,7 @@ const config = {
 
 
 let compiler = webpack(config);
-
+exec('gulp');
 let server = new WebpackDevServer(compiler, {
   contentBase: './public',
   quiet: false,

@@ -3,7 +3,8 @@
   display: inline-block;
   position: relative;
   /* 输入框 */
-  /* 日历选择部分 */ }
+  /* 日历选择部分 */
+  /* 背景遮罩层 */ }
   .date-range-body .input-section {
     display: inline-block;
     height: 36px;
@@ -43,6 +44,7 @@
     border-radius: 4px;
     background-color: #2b313d;
     color: #b4c0cb;
+    z-index: 1024;
     /* 两个月份展示 */ }
     .date-range-body .date-section.date-section-show {
       display: inherit; }
@@ -68,12 +70,16 @@
           line-height: 30px;
           text-align: center;
           cursor: pointer; }
+        .date-range-body .date-section .date-start-section .header-section .prev-year, .date-range-body .date-section .date-end-section .header-section .prev-year {
+          left: 10px; }
         .date-range-body .date-section .date-start-section .header-section .prev-month, .date-range-body .date-section .date-end-section .header-section .prev-month {
-          left: 20px; }
+          left: 30px;
+          font-size: 20px; }
         .date-range-body .date-section .date-start-section .header-section .next-month, .date-range-body .date-section .date-end-section .header-section .next-month {
-          right: 20px; }
+          right: 30px;
+          font-size: 20px; }
         .date-range-body .date-section .date-start-section .header-section .next-year, .date-range-body .date-section .date-end-section .header-section .next-year {
-          right: 0; }
+          right: 10px; }
         .date-range-body .date-section .date-start-section .header-section .year-selector, .date-range-body .date-section .date-start-section .header-section .month-selector, .date-range-body .date-section .date-end-section .header-section .year-selector, .date-range-body .date-section .date-end-section .header-section .month-selector {
           width: calc(50% - 10px);
           height: 30px;
@@ -117,3 +123,10 @@
         cursor: not-allowed;
         background-color: inherit;
         color: #b4c0cb; }
+  .date-range-body .bg-for-close {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1023; }
