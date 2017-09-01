@@ -5,6 +5,7 @@ import min from 'lodash/min';
 import max from 'lodash/max';
 import CalendarSelect from './calendarSelect';
 import 'font-awesome/css/font-awesome.css';
+import '../assets/style/main.css';
 
 export default class DateRange extends React.Component {
 
@@ -25,6 +26,8 @@ export default class DateRange extends React.Component {
         : '', // 默认结束时间
       hoverTime: '', // 鼠标悬停的日期
       isSelecting: '', //选择状态位：'', 'startDate', 'endDate'
+      placeholder: props.placeholder || 'YYYY-MM-DD',
+      lang: props.lang === 'zh-cn' ? 'zh-cn' : 'en',
     };
 
     this.dateCallback = this.dateCallback.bind(this);
@@ -144,6 +147,8 @@ export default class DateRange extends React.Component {
       startDate,
       endDate,
       showCalendar,
+      placeholder,
+      lang,
     } = this.state;
 
     return (
@@ -152,9 +157,9 @@ export default class DateRange extends React.Component {
           className="input-section"
           onClick={() => this.dateSectionDisplay('show')}
         >
-          <input type="text" className="start-time" value={startDate} />
+          <input type="text" className="start-time" value={startDate} placeholder={placeholder} />
           <span className="clip-span">——</span>
-          <input type="text" className="end-time" value={endDate} />
+          <input type="text" className="end-time" value={endDate} placeholder={placeholder} />
         </div>
 
         <div
@@ -166,6 +171,7 @@ export default class DateRange extends React.Component {
             calendarMonth={startMonth}
             minDate={minDate}
             maxDate={maxDate}
+            lang={lang}
             isSelected={item => this.isSelected(item)}
             selectTime={item => this.selectTime(item)}
             mouseEnterTime={item => this.mouseEnterTime(item)}
@@ -176,6 +182,7 @@ export default class DateRange extends React.Component {
             calendarMonth={endMonth}
             minDate={minDate}
             maxDate={maxDate}
+            lang={lang}
             isSelected={item => this.isSelected(item)}
             selectTime={item => this.selectTime(item)}
             mouseEnterTime={item => this.mouseEnterTime(item)}

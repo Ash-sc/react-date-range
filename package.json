@@ -1,6 +1,6 @@
 {
   "name": "date-range-for-react",
-  "version": "1.0.2-beta",
+  "version": "1.0.3",
   "description": "react date range",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0"
   },
-  "devDependencies": {
+  "devDependencies-for-dev": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

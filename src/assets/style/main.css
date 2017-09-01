@@ -8,15 +8,21 @@
   .date-range-body .input-section {
     display: inline-block;
     height: 36px;
-    border: 1px solid #505466;
-    position: relative; }
+    position: relative;
+    background-color: #2e3545;
+    color: #b4c0cb;
+    border: 1px solid #2a303c;
+    border-radius: 4px; }
     .date-range-body .input-section .start-time, .date-range-body .input-section .end-time {
       height: calc(100% - 2px);
       border: none;
       width: calc(50% - 22px);
       background: none;
       outline: none;
-      text-align: center; }
+      text-align: center;
+      color: #b4c0cb; }
+    .date-range-body .input-section .start-time::placeholder, .date-range-body .input-section .end-time::placeholder {
+      color: #b4c0cb; }
     .date-range-body .input-section .clip-span {
       width: 40px;
       height: 100%;

@@ -36,8 +36,11 @@ export default class CalendarSelect extends React.Component {
       calendarChange,
       className,
       isSelected,
+      lang,
     } = this.props;
-    const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+    const weekdays = lang === 'zh-cn' ?
+      ['日', '一', '二', '三', '四', '五', '六']
+      : ['Sun', 'Mon', 'Tus', 'Wes', 'Thu', 'Fri', 'Sat'];
     return (
       <div className={className}>
         <div className="header-section">
@@ -59,10 +62,14 @@ export default class CalendarSelect extends React.Component {
           />
 
           <span className="year-selector">
-            <span className="current">{calendarMonth.split('-')[0]}年</span>
+            <span className="current">
+              {calendarMonth.split('-')[0]}{lang === 'zh-cn' && '年'}
+            </span>
           </span>
           <span className="month-selector">
-            <span className="current">{calendarMonth.split('-')[1]}月</span>
+            <span className="current">
+              {calendarMonth.split('-')[1]}{lang === 'zh-cn' && '月'}
+            </span>
           </span>
         </div>
         <div className="calender-section">
