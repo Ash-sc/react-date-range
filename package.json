@@ -1,6 +1,6 @@
 {
   "name": "date-range-for-react",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "react date range",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,11 @@
   },
   "homepage": "https://github.com/Ash-sc/react-date-range#readme",
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies-for-dev": {
     "babel": "^6.23.0",
@@ -39,8 +43,6 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
     "jsx-loader": "^0.13.2",
-    "lodash": "^4.17.4",
-    "moment": "^2.18.1",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
