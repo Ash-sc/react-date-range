@@ -23,11 +23,11 @@ render() {
 ```
 
 ## Demo:
-demo with sync
+demo with sync   
 ![demo-with-sync](https://raw.githubusercontent.com/Ash-sc/react-date-range/dev/example/demo-with-sync.gif)
    
    
-demo with async
+demo with async   
 ![demo-with-async](https://raw.githubusercontent.com/Ash-sc/react-date-range/dev/example/demo-with-async.gif)
 
 ## API Reference
