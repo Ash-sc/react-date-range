@@ -23,8 +23,12 @@ render() {
 ```
 
 ## Demo:
-![demo](https://raw.githubusercontent.com/Ash-sc/react-date-range/dev/example/date-range-demo.gif)
-
+demo with sync
+![demo-with-sync](https://raw.githubusercontent.com/Ash-sc/react-date-range/dev/example/demo-with-sync.gif)
+   
+   
+demo with async
+![demo-with-async](https://raw.githubusercontent.com/Ash-sc/react-date-range/dev/example/demo-with-async.gif)
 
 ## API Reference
 
@@ -74,6 +78,11 @@ render() {
       * **Default** `"en"`
       * **Type:** `string`
       * **value:** `"en" or "zh-cn"`
+  * `sync` - sync two calender selector.
+      * **Optional**
+      * **Default** `false`
+      * **Type:** `boolean`
+      * **value:** `false、true`
         
         
 

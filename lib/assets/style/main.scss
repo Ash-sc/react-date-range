@@ -1,3 +1,21 @@
+/*************************************date range stylesheet*******************************************/
+// 鼠标悬停
+@mixin dateHover() {
+  background-color: #b4c0cb;
+  color: #000000;
+}
+
+// 日历item
+@mixin calenderItem() {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 3px;
+  background-clip: content-box;
+}
+
 .date-range-body {
   display: inline-block;
   position: relative;
@@ -11,32 +29,35 @@
     color: #b4c0cb;
     border: 1px solid #2a303c;
     border-radius: 4px;
-
-    .start-time, .end-time {
-      height: calc(100% - 2px);
-      border: none;
-      width: calc(50% - 22px);
-      background: none;
-      outline: none;
-      text-align: center;
-      color: #b4c0cb;
-    }
-
-    .start-time::placeholder, .end-time::placeholder {
-      color: #b4c0cb;
-    }
-
-    .clip-span {
-      width: 40px;
-      height: 100%;
-      text-align: center;
-      display: inline-block;
-      line-height: 36px;
-      vertical-align: top;
-    }
-
   }
 
+  // 开始、结束时间input
+  .start-time, .end-time {
+    height: calc(100% - 2px);
+    border: none;
+    width: calc(50% - 22px);
+    background: none;
+    outline: none;
+    text-align: center;
+    color: #b4c0cb;
+  }
+
+  // placeholder
+  .start-time::placeholder, .end-time::placeholder {
+    color: #b4c0cb;
+  }
+
+  // 区间“——”
+  .clip-span {
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    line-height: 36px;
+    vertical-align: top;
+  }
+
+  //input表单部分，遮罩
   .input-section:before {
     content: ' ';
     position: absolute;
@@ -55,7 +76,7 @@
     display: none;
     position: absolute;
     top: 50px;
-    width: 554px;
+    width: 530px;
     left: 0;
     padding: 0 10px;
     border-radius: 4px;
@@ -63,12 +84,9 @@
     color: #b4c0cb;
     z-index: 1024;
 
+    // 显示/隐藏
     &.date-section-show {
       display: inherit;
-    }
-
-    .date-start-section {
-      margin-right: 20px;
     }
 
     /* 两个月份展示 */
@@ -77,125 +95,147 @@
       border-radius: 4px;
       display: inline-block;
       font-size: 14px;
+      vertical-align: top;
+    }
 
-      /* 年、月选择部分 */
-      .header-section {
-        position: relative;
-        height: 30px;
-        margin: 30px 10px 0;
-        border-radius: 4px;
-        background-color: #373d49;
+    /* 年、月选择部分 */
+    .header-section {
+      position: relative;
+      height: 30px;
+      margin: 30px 10px 0;
+      border-radius: 4px;
+      background-color: #373d49;
+    }
 
-        .prev-year, .prev-month, .next-year, .next-month {
-          position: absolute;
-          height: 30px;
-          width: 20px;
-          line-height: 30px;
-          text-align: center;
-          cursor: pointer;
-        }
+    //月份、年份按钮
+    .prev-year, .prev-month, .next-year, .next-month {
+      position: absolute;
+      height: 30px;
+      width: 20px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
 
-        .prev-year {
-          left: 10px;
-        }
+    // 年份-1 icon
+    .prev-year {
+      left: 10px;
+    }
 
-        .prev-month {
-          left: 30px;
-          font-size: 20px;
-        }
+    // 月份-1 icon
+    .prev-month {
+      left: 30px;
+      font-size: 20px;
+    }
 
-        .next-month {
-          right: 30px;
-          font-size: 20px;
-        }
+    // 月份+1 icon
+    .next-month {
+      right: 30px;
+      font-size: 20px;
+    }
 
-        .next-year {
-          right: 10px;
-        }
+    // 年份+1 icon
+    .next-year {
+      right: 10px;
+    }
 
-        .year-selector, .month-selector {
-          width: calc(50% - 10px);
-          height: 30px;
-          line-height: 30px;
-          display: inline-block;
-          text-align: center;
+    // 当前选择月份、年份展示
+    .year-selector, .month-selector {
+      width: calc(50% - 10px);
+      height: 30px;
+      line-height: 30px;
+      display: inline-block;
+      text-align: center;
+    }
 
-          .current {
-            cursor: pointer;
-          }
+    // 当前展示月份、年份
+    .current {
+      cursor: pointer;
+    }
 
-        }
+    // 年份展示
+    .year-selector {
+      text-align: right;
+      padding-right: 10px;
+    }
 
-        .year-selector {
-          text-align: right;
-          padding-right: 10px;
-        }
+    // 月份展示
+    .month-selector {
+      text-align: left;
+      padding-left: 10px;
+    }
 
-        .month-selector {
-          text-align: left;
-          padding-left: 10px;
-        }
+    /* 日期选择部分 */
+    .calender-section {
+      padding: 10px;
+      margin-top: 10px;
+      height: 224px;
+    }
 
-      }
+    // “天”展示
+    .date-item, .date-weekday {
+      @include calenderItem();
+      width: 31px;
+      height: 26px;
+      line-height: 28px;
+      padding: 3px 2px;
+      // transition: background-color .1s ease;
+    }
 
-      /* 日期选择部分 */
-      .calender-section {
-        padding: 10px;
-        margin-top: 10px;
-      }
+    // 今天
+    .current-day {
+      background-color: #868c93;
+      color: #000000;
+      position: relative;
+    }
 
-      .date-item, .date-weekday {
-        display: inline-block;
-        width: 31px;
-        height: 26px;
-        line-height: 28px;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 6px;
-        font-size: 12px;
-        padding: 3px 2px;
-        background-clip: content-box;
-        transition: background-color .2s ease;
-      }
+    // 日期鼠标悬停
+    .date-item:not(.not-current-month):hover,
+    .start-or-end-selected {
+      @include dateHover();
+    }
 
-      .current-day {
-        background-color: #868c93;
-        color: #000000;
-        position: relative;
-      }
+    // 已选中日期
+    .selected {
+      background-color: #4c576a;
+      color: #b4c0cb;
+    }
 
-      .date-item:not(.not-current-month):hover,
-      .start-or-end-selected {
-        background-color: #b4c0cb;
-        color: #000000;
-      }
+    // 非当前月份日期
+    .not-current-month {
+      visibility: hidden;
+    }
 
-      .selected {
-        background-color: #4c576a;
-        color: #b4c0cb;
-      }
+    // 今天
+    .current-day:after {
+      content: ' ';
+      position: absolute;
+      right: 2px;
+      bottom: 5px;
+      border-top: 4px solid #000;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      transform: rotate(315deg);
+    }
 
-      .not-current-month {
-        visibility: hidden;
-      }
+    // 不可选中的日期
+    .date-item.disable, .date-item.disable:hover {
+      cursor: not-allowed;
+      background-color: inherit;
+      color: #b4c0cb;
+    }
 
-      .current-day:after {
-        content: ' ';
-        position: absolute;
-        right: 2px;
-        bottom: 5px;
-        border-top: 4px solid #000;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        transform: rotate(315deg);
-      }
+    // “月”、“年”展示
+    .month-item {
+      @include calenderItem();
+      width: 55px;
+      height: 50px;
+      line-height: 50px;
+    }
 
-      .date-item.disable, .date-item.disable:hover {
-        cursor: not-allowed;
-        background-color: inherit;
-        color: #b4c0cb;
-      }
-
+    // 月份、年份鼠标悬停
+    .month-item:hover {
+      @include dateHover();
     }
 
   }
