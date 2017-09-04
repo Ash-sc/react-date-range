@@ -17,7 +17,7 @@ export default class DateRange extends React.Component {
       minDate: CommonFn.ymd(props.minDate || '1900-01-01'),
       maxDate: CommonFn.ymd(props.maxDate || '2200-01-01'),
       startMonth: CommonFn.ym(props.startDate), // 默认开始月份
-      endMonth: props.endDate ? CommonFn.ym(props.endDate)
+      endMonth: props.endDate && !props.sync ? CommonFn.ym(props.endDate)
         : moment(props.startDate || undefined).add(1, 'months').format('YYYY-MM'), // 默认结束月份
       showCalendar: false, // 是否显示日历
       startDate: props.startDate ? CommonFn.ymd(props.startDate)
@@ -28,6 +28,7 @@ export default class DateRange extends React.Component {
       isSelecting: '', //选择状态位：'', 'startDate', 'endDate'
       placeholder: props.placeholder || 'YYYY-MM-DD',
       lang: props.lang === 'zh-cn' ? 'zh-cn' : 'en',
+      sync: props.sync || false, // 左右两个月份是否同步
     };
 
     this.dateCallback = this.dateCallback.bind(this);
@@ -58,10 +59,17 @@ export default class DateRange extends React.Component {
 
   // 修改日历显示的年月
   calendarChange(type, unit, section) {
-    const name = `${section}Month`;
-    this.setState({
-      [name]: moment(this.state[name]).add(type, unit).format('YYYY-MM'),
-    });
+    if (!this.state.sync) {
+      const name = `${section}Month`;
+      this.setState({
+        [name]: moment(this.state[name]).add(type, unit).format('YYYY-MM'),
+      });
+    } else {
+      this.setState({
+        startMonth: moment(this.state.startMonth).add(type, unit).format('YYYY-MM'),
+        endMonth: moment(this.state.endMonth).add(type, unit).format('YYYY-MM'),
+      });
+    }
   }
 
   // 点击日历日期，选择时间
@@ -149,6 +157,7 @@ export default class DateRange extends React.Component {
       showCalendar,
       placeholder,
       lang,
+      sync,
     } = this.state;
 
     return (
@@ -172,6 +181,8 @@ export default class DateRange extends React.Component {
             minDate={minDate}
             maxDate={maxDate}
             lang={lang}
+            sync={sync && 'start'}
+            showCalendar={showCalendar}
             isSelected={item => this.isSelected(item)}
             selectTime={item => this.selectTime(item)}
             mouseEnterTime={item => this.mouseEnterTime(item)}
@@ -183,6 +194,8 @@ export default class DateRange extends React.Component {
             minDate={minDate}
             maxDate={maxDate}
             lang={lang}
+            sync={sync && 'end'}
+            showCalendar={showCalendar}
             isSelected={item => this.isSelected(item)}
             selectTime={item => this.selectTime(item)}
             mouseEnterTime={item => this.mouseEnterTime(item)}
