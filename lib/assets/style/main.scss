@@ -184,8 +184,7 @@
 
     // 今天
     .current-day {
-      background-color: #868c93;
-      color: #000000;
+      background-color: #373F47;
       position: relative;
     }
 
@@ -212,10 +211,14 @@
       position: absolute;
       right: 2px;
       bottom: 5px;
-      border-top: 4px solid #000;
+      border-top: 4px solid #b4c0cb;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       transform: rotate(315deg);
+    }
+
+    .current-day.start-or-end-selected:after {
+      border-top: 4px solid #000;
     }
 
     // 不可选中的日期

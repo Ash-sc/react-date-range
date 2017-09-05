@@ -117,8 +117,7 @@
       line-height: 28px;
       padding: 3px 2px; }
     .date-range-body .date-section .current-day {
-      background-color: #868c93;
-      color: #000000;
+      background-color: #373F47;
       position: relative; }
     .date-range-body .date-section .date-item:not(.not-current-month):hover,
     .date-range-body .date-section .start-or-end-selected {
@@ -134,10 +133,12 @@
       position: absolute;
       right: 2px;
       bottom: 5px;
-      border-top: 4px solid #000;
+      border-top: 4px solid #b4c0cb;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       transform: rotate(315deg); }
+    .date-range-body .date-section .current-day.start-or-end-selected:after {
+      border-top: 4px solid #000; }
     .date-range-body .date-section .date-item.disable, .date-range-body .date-section .date-item.disable:hover {
       cursor: not-allowed;
       background-color: inherit;
