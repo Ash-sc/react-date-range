@@ -30,6 +30,12 @@ demo with sync
 demo with async   
 ![demo-with-async](https://raw.githubusercontent.com/Ash-sc/react-date-range/dev/example/demo-with-async.gif)
 
+## View Example:
+1. Rewrite 'devDependencies-for-dev' with 'devDependencies' in package.json
+2. $ npm install
+3. npm run dev
+4. View example in your broswer: http://localhost:8044
+
 ## API Reference
 
 * **Properties:**
