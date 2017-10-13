@@ -1,6 +1,6 @@
 {
   "name": "date-range-for-react",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "react date range",
   "main": "index.js",
   "scripts": {
